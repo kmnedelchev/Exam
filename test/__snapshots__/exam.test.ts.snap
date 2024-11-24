@@ -529,7 +529,7 @@ def sort_filter_rules(json_obj):
         "FilterCriteria": {
           "Filters": [
             {
-              "Pattern": "{"eventName":["REMOVE"]}",
+              "Pattern": "{"eventName":["INSERT"]}",
             },
           ],
         },
@@ -550,7 +550,7 @@ def sort_filter_rules(json_obj):
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "407253d0bee3acd7bba03aa5c90cdee7bf9e42f60257241aeb15a7f6cf1d6de1.zip",
+          "S3Key": "1414951b1bf6c8cbb8f082da6c0c477793692a51f1f6d59d53d2e6f8bc444f12.zip",
         },
         "Environment": {
           "Variables": {
@@ -727,7 +727,7 @@ def sort_filter_rules(json_obj):
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "1a6264bb26f4c2a8d335dc3a077a7b188c5f5714b4c451a8a05aab5ba3f5dd67.zip",
+          "S3Key": "3da2a17fbeafc5b71cae49470902b4e303df82415b955c754e77fd7a76a6b4cd.zip",
         },
         "Environment": {
           "Variables": {
