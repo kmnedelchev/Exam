@@ -71,12 +71,22 @@ export class ExamStack extends cdk.Stack {
     ExamErrorTable.grantReadWriteData(ExamCleanupFunction);
 
     // Trigger for cleanup
+    // ExamCleanupFunction.addEventSource(new DynamoEventSource(ExamErrorTable, {
+    //   startingPosition: StartingPosition.LATEST,
+    //   batchSize: 5,
+    //   filters: [
+    //     FilterCriteria.filter({
+    //       eventName: FilterRule.isEqual('REMOVE'),
+    //     })
+    //   ]
+    // }));
+
     ExamCleanupFunction.addEventSource(new DynamoEventSource(ExamErrorTable, {
       startingPosition: StartingPosition.LATEST,
       batchSize: 5,
       filters: [
         FilterCriteria.filter({
-          eventName: FilterRule.isEqual('REMOVE'),
+          eventName: FilterRule.isEqual('INSERT'),
         })
       ]
     }));

@@ -34,18 +34,18 @@ export const handler = async (event: any) => {
         
         console.log('File extension is valid.');
 
-        //Publish to SNS - correct file extension
-        await snsClient.send(new PublishCommand({
-            TopicArn: topicArn,
-            Message: ` Dear client, Your file extension is correct
-            File name: .${filename};
-            File extension: .${fileextension};
-            File size: ${filesize};
-            Date of upload: ${dou}`
-        }
-        ));
+        // //Publish to SNS - correct file extension
+        // await snsClient.send(new PublishCommand({
+        //     TopicArn: topicArn,
+        //     Message: ` Dear client, Your file extension is correct
+        //     File name: .${filename};
+        //     File extension: .${fileextension};
+        //     File size: ${filesize};
+        //     Date of upload: ${dou}`
+        // }
+        // ));
 
-        console.log('Notification sent!')
+        // console.log('Notification sent!')
 
         const ttl = Math.floor(Date.now() / 1000) + 30*60;
 
